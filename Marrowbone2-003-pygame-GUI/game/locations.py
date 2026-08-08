@@ -17,7 +17,7 @@ def dock():
 
     gui.display(
         f"You are on a {random.choice(weather)} dock.\n"
-        "Paths lead north to a trail or west to a boathouse."
+        "Paths lead north to a trail or east to a boathouse."
     )
 
     if "compass" not in player.inventory:

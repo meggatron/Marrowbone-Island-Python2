@@ -18,7 +18,7 @@ def dock():
     gui.display(f"""
 You are on a {random.choice(weather)} dock.
 Paths lead north to a trail.
-Paths lead east to a boathouse.
+Paths lead west to a boathouse.
 """)
 
     if "token" not in player.inventory and "slingshot" not in player.inventory:
@@ -39,10 +39,10 @@ Paths lead east to a boathouse.
 
     if move == "go north" or move == "north":
         return "trail"
-    elif move == "go east" or move == "east":
+    elif move == "go west" or move == "west":
         return "boathouse"
     else:
-        gui.display("Try typing 'north' or 'east'.")
+        gui.display("Try typing 'north' or 'west'.")
         gui.pause(1000)
         return "dock"
 
@@ -80,12 +80,12 @@ def boathouse():
 
     gui.pause(1000)
 
-    move = gui.get_input("Type west to return to the dock.")
+    move = gui.get_input("Type east to return to the dock.")
 
-    if move == "go west" or move == "west":
+    if move == "go east" or move == "east":
         return "dock"
     else:
-        gui.display("Try typing 'west'.")
+        gui.display("Try typing 'east'.")
         gui.pause(1000)
         return "boathouse"
 
