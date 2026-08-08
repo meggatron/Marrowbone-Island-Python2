@@ -1,4 +1,4 @@
-# creatures.py
+# Marrowbone2-009-backgrounds/game/creatures.py
 # Creature classes for Marrowbone Island
 
 class Creature:

@@ -1,4 +1,4 @@
-import pygame
+# Marrowbone2-009-backgrounds/main.py
 
 from game import audio, gui, locations, player
 

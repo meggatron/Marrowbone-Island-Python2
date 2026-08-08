@@ -71,8 +71,7 @@ def pause(ms):
     while elapsed < ms:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                raise SystemExit
+                quit()
 
         clock.tick(60)
         elapsed += clock.get_time()

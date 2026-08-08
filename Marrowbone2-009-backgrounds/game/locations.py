@@ -1,3 +1,5 @@
+# Marrowbone2-009-backgrounds/game/locations.py
+
 import random
 from game import gui, player, audio
 from game.creatures import GiantShrimp
