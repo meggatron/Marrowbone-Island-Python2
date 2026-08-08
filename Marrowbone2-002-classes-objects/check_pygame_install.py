@@ -1,3 +1,5 @@
+# check_pygame_install.py
+
 import pygame
 
 print(f"pygame version: {pygame.__version__}")

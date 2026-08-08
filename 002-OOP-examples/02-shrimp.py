@@ -1,3 +1,5 @@
+# 02-shrimp.py
+
 class Shrimp:
     def __init__(self, name):
         # Data

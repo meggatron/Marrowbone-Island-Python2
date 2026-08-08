@@ -1,3 +1,5 @@
+# shrimp-class-haiku-GUI.py
+
 import pygame
 
 # define the shrimp class
