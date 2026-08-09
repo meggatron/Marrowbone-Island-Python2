@@ -2,6 +2,7 @@
 
 import pygame
 
+# GUI variables
 screen = None
 font = None
 last_lines = []

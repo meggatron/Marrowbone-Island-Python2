@@ -15,7 +15,6 @@ BACKGROUND_FILES = {
 
 
 def main():
-    print("LOADED GUI FROM:", gui.__file__)
 
     gui.start()
 

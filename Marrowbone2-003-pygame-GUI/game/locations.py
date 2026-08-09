@@ -17,7 +17,7 @@ def dock():
 
     gui.display(
         f"You are on a {random.choice(weather)} dock.\n"
-        "Paths lead north to a trail or east to a boathouse."
+        "Paths lead north to a trail or west to a boathouse."
     )
 
     if "compass" not in player.inventory:
@@ -243,10 +243,10 @@ def laundry_room():
         )
         gui.pause(1500)
 
-    gui.display("You leave the laundry room.")
+    gui.display("You leave the laundry room, cross the boathouse, \nand return to the dock.")
     gui.pause(1000)
 
-    return "boathouse"
+    return "dock"
 
 
 locations = {

@@ -1,5 +1,8 @@
+# Marrowbone2-004-pygame-GUI/game/sprites.py
+
 import pygame
 import os
+
 
 class PlayerSprite(pygame.sprite.Sprite):
 
@@ -10,13 +13,19 @@ class PlayerSprite(pygame.sprite.Sprite):
             os.path.join("assets", "orca-1.png")
         ).convert_alpha()
 
+        self.image1 = pygame.transform.scale(
+            self.image1, (240, 240)
+        )
+
         self.image2 = pygame.image.load(
             os.path.join("assets", "orca-2.png")
         ).convert_alpha()
 
-        self.image1 = pygame.transform.scale(self.image1, (240, 240))
-        self.image2 = pygame.transform.scale(self.image2, (240, 240))
+        self.image2 = pygame.transform.scale(
+            self.image2, (240, 240)
+        )
 
+        # Pygame draws whatever is stored in self.image
         self.image = self.image1
 
         self.rect = self.image.get_rect(center=(x, y))
@@ -25,7 +34,6 @@ class PlayerSprite(pygame.sprite.Sprite):
         self.animation_counter = 0
 
     def update(self):
-
         keys = pygame.key.get_pressed()
 
         moving = (
@@ -36,7 +44,6 @@ class PlayerSprite(pygame.sprite.Sprite):
         )
 
         if moving:
-
             self.animation_counter += 1
 
             if self.animation_counter % 20 < 10:
@@ -44,14 +51,18 @@ class PlayerSprite(pygame.sprite.Sprite):
             else:
                 self.image = self.image2
 
-            if keys[pygame.K_LEFT]:
-                self.rect.x -= self.speed
+        else:
+            self.image = self.image1
+            self.animation_counter = 0
 
-            if keys[pygame.K_RIGHT]:
-                self.rect.x += self.speed
+        if keys[pygame.K_LEFT]:
+            self.rect.x -= self.speed
 
-            if keys[pygame.K_UP]:
-                self.rect.y -= self.speed
+        if keys[pygame.K_RIGHT]:
+            self.rect.x += self.speed
 
-            if keys[pygame.K_DOWN]:
-                self.rect.y += self.speed
+        if keys[pygame.K_UP]:
+            self.rect.y -= self.speed
+
+        if keys[pygame.K_DOWN]:
+            self.rect.y += self.speed

@@ -16,8 +16,8 @@ class PlayerSprite(pygame.sprite.Sprite):
             os.path.join("assets", "orca-2.png")
         ).convert_alpha()
 
-        self.image1 = pygame.transform.scale(self.image1, (240, 240))
-        self.image2 = pygame.transform.scale(self.image2, (240, 240))
+        self.image1 = pygame.transform.scale(self.image1, (160, 160))
+        self.image2 = pygame.transform.scale(self.image2, (160, 160))
 
         self.image = self.image1
 

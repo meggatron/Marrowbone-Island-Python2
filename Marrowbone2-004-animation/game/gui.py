@@ -1,18 +1,16 @@
+# Marrowbone2-004-pygame-GUI/game/gui.py
 from game.sprites import PlayerSprite
-
 import pygame
 
+# GUI variables
 screen = None
 font = None
 last_lines = []
 all_sprites = None
 
 
-
 def start():
-    global screen
-    global font
-    global player_sprite
+    global screen, font
     global all_sprites
 
     pygame.init()
@@ -25,8 +23,9 @@ def start():
     player_sprite = PlayerSprite(600, 400)
     all_sprites = pygame.sprite.Group(player_sprite)
 
+
 def draw_text(lines, input_text=None):
-    screen.fill((10, 100, 120))
+    screen.fill((10, 20, 40))
 
     all_sprites.update()
     all_sprites.draw(screen)
@@ -40,6 +39,7 @@ def draw_text(lines, input_text=None):
         screen.blit(input_surface, (40, 430))
 
     pygame.display.flip()
+
 
 
 def display(text):
@@ -83,8 +83,7 @@ def pause(ms):
     while elapsed < ms:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
-                raise SystemExit
+                quit()
 
         clock.tick(60)
         elapsed += clock.get_time()
