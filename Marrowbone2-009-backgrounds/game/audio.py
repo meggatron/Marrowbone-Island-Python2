@@ -1,5 +1,3 @@
-# Marrowbone2-009-backgrounds/game/audio.py
-
 import os
 import pygame
 

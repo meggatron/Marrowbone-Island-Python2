@@ -1,4 +1,4 @@
-# Marrowbone2-009-backgrounds/main.py
+import pygame
 
 from game import audio, gui, locations, player
 
@@ -15,6 +15,7 @@ BACKGROUND_FILES = {
 
 
 def main():
+    print("LOADED GUI FROM:", gui.__file__)
 
     gui.start()
 
