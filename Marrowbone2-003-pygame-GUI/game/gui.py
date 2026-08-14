@@ -3,6 +3,7 @@
 import pygame
 
 # GUI variables
+
 screen = None
 font = None
 last_lines = []
@@ -18,14 +19,25 @@ def start():
 
 
 def draw_text(lines, input_text=None):
-    screen.fill((10, 20, 40))
+    # Light gray background
+    screen.fill((235, 235, 235))
 
     for i, line in enumerate(lines):
-        line_surface = font.render(line, True, pygame.Color("white"))
+        # Dark text for readability on a light background
+        line_surface = font.render(
+            line,
+            True,
+            pygame.Color("black")
+        )
         screen.blit(line_surface, (40, 60 + i * 35))
 
     if input_text is not None:
-        input_surface = font.render("> " + input_text, True, pygame.Color("lime"))
+        # Dark green player input
+        input_surface = font.render(
+            "> " + input_text,
+            True,
+            pygame.Color("darkgreen")
+        )
         screen.blit(input_surface, (40, 430))
 
     pygame.display.flip()
@@ -57,8 +69,10 @@ def get_input(prompt):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
                     return input_text.lower().strip()
+
                 elif event.key == pygame.K_BACKSPACE:
                     input_text = input_text[:-1]
+
                 else:
                     input_text += event.unicode
 

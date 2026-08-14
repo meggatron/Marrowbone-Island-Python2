@@ -51,6 +51,10 @@ rendered = [font.render(line, True, text_color) for line in lines]
 running = True
 while running:
     screen.fill(bg_color)
+    # rendered → the collection of lines we're looping through
+    # enumerate(rendered) → gives us both the line and its position
+    # I → the index: 0, 1, 2,
+    # line → the actual line at that position
     for i, line in enumerate(rendered):
         screen.blit(line, (50, 100 + i * 50))
     pygame.display.flip()

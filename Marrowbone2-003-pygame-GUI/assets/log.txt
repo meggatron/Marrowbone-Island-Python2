@@ -50,3 +50,8 @@ Entered forest
 Entered forest
 Entered trail
 Entered cliff
+Entered dock
+Entered trail
+Entered dock
+Entered boathouse
+Entered laundry_room
